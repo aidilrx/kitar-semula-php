@@ -18,6 +18,11 @@ body {
   margin: 0px;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 nav.navigasi-bar {
   background-color: #2ef429;
   background-image: -webkit-gradient(linear, right top, left bottom, from(#2ef429), to(white));
@@ -36,27 +41,36 @@ nav.navigasi-bar [class^="container"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
 }
 
 nav.navigasi-bar [class^="container"] .heading {
   width: 100%;
   height: auto;
-  background-color: #2ef429;
-  background-image: -webkit-gradient(linear, right top, left bottom, from(#2ef429), to(snow));
-  background-image: linear-gradient(to bottom left, #2ef429, snow);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 nav.navigasi-bar [class^="container"] .heading .logo {
-  width: 10px !important;
-  height: 100px;
+  width: 15% !important;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-nav.navigasi-bar [class^="container"] .heading .logo img {
-  max-width: 100%;
-  max-height: 100%;
+nav.navigasi-bar [class^="container"] .heading .title {
+  text-align: center;
+  min-width: 70%;
 }
 
 nav.navigasi-bar [class^="container"] .navigasi {

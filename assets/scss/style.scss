@@ -15,7 +15,10 @@ body {
   background-size: cover;
   margin: 0px;
 }
-
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
 nav.navigasi-bar {
   background-color: $theme;
   background-image: linear-gradient(to bottom left, $theme, white);
@@ -25,22 +28,27 @@ nav.navigasi-bar {
   [class^="container"] {
     padding: 2px 0px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center !important;
+
     .heading {
       width: 100%;
       height: auto;
-      background-color: #2ef429;
-      background-image: linear-gradient(to bottom left, $theme, snow);
+      // background-color: #2ef429;
+      // background-image: linear-gradient(to bottom left, $theme, snow);
       display: flex;
 
       .logo {
-        width: 10px !important;
-        height: 100px;
+        width: 15% !important;
+        height: 15%;
+        display: flex;
+        align-items: center;
+      }
 
-        img {
-          max-width: 100%;
-          max-height: 100%;
-        }
+      .title {
+        text-align: center;
+        min-width: 70%;
       }
     }
     .navigasi {
@@ -73,7 +81,6 @@ nav.navigasi-bar {
                 position: absolute;
                 top: -199999%;
                 transition: 0.5s;
-
               }
             }
             i.fas {
@@ -196,18 +203,6 @@ nav.navigasi-bar {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .anim-container:not(.disabled) {
   position: relative;
 }
@@ -222,7 +217,6 @@ nav.navigasi-bar {
   transition: 0.3s ease;
   //   background-image: linear-gradient(to right, $theme, #027200);
   background-color: $theme;
-  
 }
 .anim-container:not(.disabled).active > .anim-line {
   width: 100%;
