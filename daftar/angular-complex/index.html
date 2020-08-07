@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  ng-app="kitarSemula"
+  ng-controller="kitarSemulaFormCtrl"
+>
+  <head>
+    <title>Daftar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <base href="http://localhost/" />
+    <script src="assets/js/angular/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.8.0/angular-sanitize.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <script src="assets/js/jquery.slim.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var app = angular.module("kitarSemula", ["ngSanitize"]);
+    </script>
+    <style>
+      i {
+        font-size: 1.01em;
+        /* width: 5px; */
+        width: 1.2em !important;
+      }
+    </style>
+  </head>
+  <body class="container">
+      <h1>Daftar</h1>
+    <div class="daftar">
+      <div class="form">
+        <form name="ksForm">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              ng-model="nama"
+              ng-change="sahkan('nama',nama);"
+            />
+            <div class="input-group-append">
+              <span
+                class="input-group-text p-0"
+                ng-if="inputsAction['nama'].state != 'idl'"
+              >
+                <span
+                  ng-if="inputsAction['nama'].state=='idle' || inputsAction['nama'].state=='loadings'"
+                  class="text-warning m-0 h-100 d-flex align-items-center pr-3 pl-3 bg-light"
+                >
+                <i class="fas fa-question"></i>
+                </span>
+                <span
+                  ng-if="inputsAction['nama'].state == 'success' || nama.state=='success'"
+                  class="alert-success text-success m-9 h-100 d-flex align-items-center pl-3 pr-3"
+                >
+                  <i class="fas fa-check"></i>
+                </span>
+                <span
+                  ng-if="inputsAction['nama'].state=='failed'"
+                  class="alert-danger text-danger m-0 h-100 d-flex align-items-center pl-3 pr-3"
+                >
+                  <i class="fas fa-exclamation-triangle"></i>
+                </span>
+                <span
+                  ng-if="inputsAction['nama'].state=='loading'"
+                  class="alert-secondary text-dark m-0 h-100 d-flex align-items-center pl-3 pr-3"
+                >
+                  <i class="fas fa-pulse fa-spinner fa-spin"></i>
+                </span>
+              </span>
+              <!-- <span class="input-group-text alert-danger text-danger">
+                <i class="fas fa-times"></i>
+              </span> -->
+            </div>
+          </div>
+          <small class="text-{{inputsAction['nama'].state == 'success' ?"success":"danger"}}">
+            {{inputsAction['nama'].message}}
+          </small>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-key"></i>
+              </span>
+              
+            </div>
+            <input type="password" ng-model="katalaluan" name="katalaluan" class="form-control" ng-change="inputsAction['katalaluan'].touched=true;sahkan('katalaluan', katalaluan)">
+            <div class="input-group-append" ng-if="inputsAction['katalaluan'].touched==true && katalaluan != ''" >
+              <span class="check-valid p-0 input-group-text" >
+                <span class="d-flex align-items-center h-100 pr-3 pl-3 alert-secondary text-dark" ng-if="ia['katalaluan'].state=='loading'">
+                  <i class="fas fa-spin fa-spinner fa-pulse fa-fw"></i>
+                </span>
+                <span class="d-flex align-items-center h-100 pr-3 pl-3 alert-success text-success" ng-if="ia['katalaluan'].state=='success'">
+                  <i class="fas fa-check fa-fw"></i>
+                </span>
+                <span class="d-flex align-items-center h-100 pr-3 pl-3 alert-danger text-danger" ng-if="ia['katalaluan'].state=='failed'">
+                  <i class="fas fa-exclamation-triangle fa-fw"></i>
+                </span>
+              </span>
+              <!-- <button ng-click="tambahAksi('katalaluan', {state: 'idle'})">
+                click to add
+              </button> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {{inputsAction["katalaluan"]}}
+    <script>
+      app.controller("kitarSemulaFormCtrl", kitarSemulaFormCtrl);
+      function kitarSemulaFormCtrl($scope, $http) {
+        var $ = $scope;
+
+        $.loading = false;
+
+        $.inputsAction = {
+          nama: {
+            state: "idle",
+            message: "",
+          },
+        };
+        $.ia = $.inputsAction;
+        $.tambahAksi = function(modelName, attr) {
+          // $.inputsAction.push({modelName: attr});
+          $.inputsAction[modelName] = attr;
+          console.log("success added " + modelName);
+          console.log($.inputsAction);
+          return $.inputsAction[modelName];
+        }
+        $.sahkan = function (modelName, model) {
+
+          // console.log($.nama_2);
+          // console.log($.inputsss);
+          // console.log($.nama);
+          // $.inputsAction[modelName].state = "loading";
+        //   $.inputsAction[modelName].message = ;
+          $.nama.state = "success";
+          console.log($.nama.state);
+          //   console.log("Getting Validity for " + model);
+          $http({
+            method: "POST",
+            url: `assets/php/sahkan.php`,
+            data: {
+              query: modelName,
+              value: model,
+            },
+          }).then(
+            function (success) {
+              $.inputsAction[modelName].state = success.data.state;
+            // $.inputsAction[modelName].state = "loading";
+              $.inputsAction[modelName].message = success.data.message;
+              console.log(success.data);
+            },
+            function (failed) {
+              console.log("Oops... Something went wrong.");
+            }
+          );
+        };
+        $.tambahAksi("katalaluan", {state: "idle", touched: false});
+        
+      }
+    </script>
+  </body>
+</html>
