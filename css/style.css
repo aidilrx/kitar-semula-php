@@ -154,8 +154,8 @@ nav.navigasi-bar [class^="container"] .navigasi .navbar-toggler:focus {
 .profile-pengguna {
   min-height: 50vh;
   background-color: #00000044;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2ef4298f), to(#fffafa8f));
-  background-image: linear-gradient(to bottom right, #2ef4298f, #fffafa8f);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2ef429), to(#fffafa8f));
+  background-image: linear-gradient(to bottom right, #2ef429, #fffafa8f);
   width: 100%;
 }
 
