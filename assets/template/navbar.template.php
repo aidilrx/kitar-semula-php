@@ -26,11 +26,11 @@ function setActive($id)
 }
 // $a = "active";
 ?>
-<nav class="navigasi-bar">
+<!-- <nav class="navigasi-bar">
   <div class="container-fluid">
     <div class="tajuk w-100 container">
       <img src="assets/img/logo-sekolah.png" alt="Sekolah Menengah Kebangsaan Bandar Baru Sungai Buloh" />
-      <!-- <abbr title="Sekolah Menengah Kebangsaan Bandar Baru Sungai Buloh"> SMKBBSB </abbr> -->
+      <!- - <abbr title="Sekolah Menengah Kebangsaan Bandar Baru Sungai Buloh"> SMKBBSB </abbr> - ->
       <div class="tajuk-laman text-center">
         <h1 class="text-center" style="text-align: center !important;">Sistem Kitar Semula</h1>
         <small class="text-danger">Sekolah Menengah Kebangsaan Bandar Baru Sungai Buloh</small>
@@ -68,10 +68,10 @@ function setActive($id)
           <?php
           } else {
           ?>
-            <!-- <li class="nav-item anim-container">
+            <! -- <li class="nav-item anim-container">
                 <a href="logout.php" class="nav-link"> <i class="fas fa-sign-out-alt" style="transform: rotate(180deg);"></i> Log Keluar</a>
                 <span class="anim-line"></span>
-              </li> -->
+              </li> -- >
             <li class="nav-item d-none-sm d-none-md dropdown">
               <style>
                 .profile-menu {
@@ -147,7 +147,7 @@ function setActive($id)
           <li class="nav-item anim-container <?= setActive('tentang') ?> disabled" disabled>
             <a href="#" class="nav-link disabled" disabled>
               <i class="fas fa-info-circle"></i>
-              <!-- Tentang -->
+              <! -- Tentang - ->
             </a>
             <span class="anim-line"></span>
           </li>
@@ -167,4 +167,14 @@ function setActive($id)
       </div>
     </div>
   </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-md">
+    <div class="container">
+        <div class="heading">
+
+        </div>
+        <div class="navigasi">
+        </div>
+    </div>
 </nav>
