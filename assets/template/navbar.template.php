@@ -172,7 +172,17 @@ function setActive($id)
 <nav class="navbar navbar-expand-md">
     <div class="container">
         <div class="heading">
+            <div class="logo logo-sekolah">
+                <img src="assets/img/logo-sekolah.png" alt="Logo SMKBBSB">
+            </div>
+            <div class="title">
+                <h1>Sistem Kitar Semula</h1>
+                <h6>Sekolah Menengah Kebangsaan Bandar Baru Sungai Buloh</h6>
+            </div>
+            <div class="logo logo-kitar-semula">
 
+                <img src="assets/img/logo.png" alt="Logo Kitar Semula">
+            </div>
         </div>
         <div class="navigasi">
         </div>

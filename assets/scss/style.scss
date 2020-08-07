@@ -1,3 +1,5 @@
+$theme: $theme;
+
 * {
   padding: 0px;
   margin: 0px;
@@ -8,7 +10,7 @@
 
 body {
   background-color: #91df90;
-  background-image: linear-gradient(to bottom right, snow 70%, #2ef429 30%);
+  background-image: linear-gradient(to bottom right, snow 70%, $theme 30%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,46 +18,16 @@ body {
 }
 
 nav.navigasi-bar {
-  background-color: #2ef429;
-  background-image: linear-gradient(to bottom left, #2ef429, white);
+  background-color: $theme;
+  background-image: linear-gradient(to bottom left, $theme, white);
   display: block !important;
-  //   padding-top: 5px;
-  //   padding-bottom: -1px !important;
+  width: 100%;
+  height: auto;
   [class^="container"] {
     padding: 2px 0px;
-    .tajuk {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 5px;
-      img {
-        height: 60px; 
-      }
-      .tajuk-laman {
-        // background-color: #2ef429;
-        // height: 60px;
-        margin: 0px 15px;
-        padding: 5px;
-        // box-sizing: border-box;
-        h1 {
-          font-size: 28px;
-          text-align: center !important;
-          font-weight: bold;
-          font-style: oblique;
-          font-family: cursive;
-          // display: flex;
-          // align-items: center;
-          margin: 0px 15px;
-          // color: #132712;
-          color: #9c630e;
-        }
-      }
-    }
     .navigasi {
       border-top: 2px solid #027200;
       width: 100%;
-      //   margin: 0px;
       padding: 0px !important;
       .navbar-collapse,
       .menu-pengguna {
@@ -108,7 +80,7 @@ nav.navigasi-bar {
       .navbar-toggler {
         color: #027200;
         border: 2px solid #027200;
-        background-color: #2ef429;
+        background-color: $theme;
         // transition: 0.5s;
       }
       .navbar-toggler:hover,
@@ -172,7 +144,7 @@ nav.navigasi-bar {
 .profile-pengguna {
   min-height: 50vh;
   background-color: #00000044;
-  background-image: linear-gradient(to bottom right, #2ef4298f, #fffafa8f);
+  background-image: linear-gradient(to bottom right, $theme8f, #fffafa8f);
   width: 100%;
   [class^="container"] {
     background-color: #ffffffaa;
@@ -196,7 +168,7 @@ nav.navigasi-bar {
         width: 70%;
         overflow-x: hidden;
         text-overflow: ellipsis;
-        border-left: 5px solid #2ef429;
+        border-left: 5px solid $theme;
         padding: 10px;
         h2 {
           font-size: 1.5em;
@@ -230,8 +202,8 @@ nav.navigasi-bar {
   content: "F";
   color: transparent;
   transition: 0.3s ease;
-  //   background-image: linear-gradient(to right, #2ef429, #027200);
-  background-color: #2ef429;
+  //   background-image: linear-gradient(to right, $theme, #027200);
+  background-color: $theme;
   
 }
 .anim-container:not(.disabled).active > .anim-line {

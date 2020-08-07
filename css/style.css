@@ -23,43 +23,12 @@ nav.navigasi-bar {
   background-image: -webkit-gradient(linear, right top, left bottom, from(#2ef429), to(white));
   background-image: linear-gradient(to bottom left, #2ef429, white);
   display: block !important;
+  width: 100%;
+  height: auto;
 }
 
 nav.navigasi-bar [class^="container"] {
   padding: 2px 0px;
-}
-
-nav.navigasi-bar [class^="container"] .tajuk {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  padding: 5px;
-}
-
-nav.navigasi-bar [class^="container"] .tajuk img {
-  height: 60px;
-}
-
-nav.navigasi-bar [class^="container"] .tajuk .tajuk-laman {
-  margin: 0px 15px;
-  padding: 5px;
-}
-
-nav.navigasi-bar [class^="container"] .tajuk .tajuk-laman h1 {
-  font-size: 28px;
-  text-align: center !important;
-  font-weight: bold;
-  font-style: oblique;
-  font-family: cursive;
-  margin: 0px 15px;
-  color: #9c630e;
 }
 
 nav.navigasi-bar [class^="container"] .navigasi {
@@ -267,4 +236,3 @@ nav.navigasi-bar [class^="container"] .navigasi .navbar-toggler:focus {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-/*# sourceMappingURL=style.css.map */
