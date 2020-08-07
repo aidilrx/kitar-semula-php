@@ -169,7 +169,7 @@ function setActive($id)
   </div>
 </nav> -->
 
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-expand-md navigasi-bar">
     <div class="container">
         <div class="heading">
             <div class="logo logo-sekolah">
@@ -180,7 +180,6 @@ function setActive($id)
                 <h6>Sekolah Menengah Kebangsaan Bandar Baru Sungai Buloh</h6>
             </div>
             <div class="logo logo-kitar-semula">
-
                 <img src="assets/img/logo.png" alt="Logo Kitar Semula">
             </div>
         </div>

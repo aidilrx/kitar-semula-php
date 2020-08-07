@@ -24,6 +24,25 @@ nav.navigasi-bar {
   height: auto;
   [class^="container"] {
     padding: 2px 0px;
+    display: flex;
+    flex-direction: column; 
+    .heading {
+      width: 100%;
+      height: auto;
+      background-color: #2ef429;
+      background-image: linear-gradient(to bottom left, $theme, snow);
+      display: flex;
+
+      .logo {
+        width: 10px !important;
+        height: 100px;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
     .navigasi {
       border-top: 2px solid #027200;
       width: 100%;

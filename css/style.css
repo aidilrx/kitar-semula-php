@@ -29,6 +29,23 @@ nav.navigasi-bar {
 
 nav.navigasi-bar [class^="container"] {
   padding: 2px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+nav.navigasi-bar [class^="container"] .heading {
+  width: 100%;
+  height: auto;
+}
+
+nav.navigasi-bar [class^="container"] .heading .logo {
+  width: 10%;
+  height: auto;
 }
 
 nav.navigasi-bar [class^="container"] .navigasi {
