@@ -169,7 +169,7 @@ function setActive($id)
   </div>
 </nav> -->
 
-<nav class="navbar navbar-expand-md">
+<nav class="header">
     <div class="container">
         <div class="heading">
             <div class="logo logo-sekolah">
@@ -183,10 +183,48 @@ function setActive($id)
                 <img src="assets/img/logo.png" alt="Logo Kitar Semula">
             </div>
         </div>
-        <div class="navigasi">
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <div class="navbar navbar-expand-md w-100 navigasi">
+            <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarCollapse"
+                style="margin-left: auto !important;">
                 <i class="fas fa-bars"></i>
             </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link anim-container active">
+                            Laman Utama
+                            <div class="anim-line"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link anim-container">
+                            Tentang laman ini
+                            <div class="anim-line"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#hubungi" class="nav-link anim-container">
+                            Hubungi kami
+                            <div class="anim-line"></div>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="navbar-nav ml-auto auth">
+                    <li class="nav-item">
+                        <a href="#daftar" class="nav-link anim-container">
+                            Daftar
+                            <div class="anim-line"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#daftar" class="nav-link anim-container">
+                            Login
+                            <div class="anim-line"></div>
+                        </a>
+                    </li>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
