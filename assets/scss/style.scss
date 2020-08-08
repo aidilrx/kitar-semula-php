@@ -19,14 +19,15 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
-nav.navigasi-bar {
+nav.navbar {
   background-color: $theme;
   background-image: linear-gradient(to bottom left, $theme, white);
   display: block !important;
   width: 100%;
   height: auto;
+  padding: 10px 0px;
   [class^="container"] {
-    padding: 2px 0px;
+    // padding: 2px 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,20 +36,32 @@ nav.navigasi-bar {
     .heading {
       width: 100%;
       height: auto;
-      // background-color: #2ef429;
-      // background-image: linear-gradient(to bottom left, $theme, snow);
+      padding: 0px 5px;
+      margin: 2px;
       display: flex;
 
       .logo {
-        width: 15% !important;
-        height: 15%;
+        // width: 10% !important;
+        flex: 2;
         display: flex;
         align-items: center;
+        padding: 2px;
+        img {
+          width: 70%;
+        }
       }
 
       .title {
+        flex: 8;
         text-align: center;
         min-width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        .main-title {
+          font-size: 2.53em;
+        }
       }
     }
     .navigasi {
