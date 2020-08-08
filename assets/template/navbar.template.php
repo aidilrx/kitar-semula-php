@@ -184,6 +184,9 @@ function setActive($id)
             </div>
         </div>
         <div class="navigasi">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </div>
 </nav>
