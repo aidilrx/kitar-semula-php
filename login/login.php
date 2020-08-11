@@ -12,8 +12,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         #pengguna berjaya login
         session_regenerate_id();
 
-        ["nama"=> $_SESSION["nama"]] = $lakasana_arahan->fetch_assoc();
+        [
+            "id"=> $_SESSION["id"], 
+            "nama"=> $_SESSION["nama"], 
+            "avatar" => $_SESSION["avatar_link"],
+            "point" => $_SESSION["point"],
+            "status" => $status
+        ] = $lakasana_arahan->fetch_assoc();
         
+        // $_SESSION["admin"] = $lakasana_arahan->fetch_assoc()["status"];
+        $_SESSION["admin"] = $status == "admin";
         echo "
         <script>
         alert('Log masuk berjaya.');
@@ -32,7 +40,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <base href="http://localhost/">
-    </head>
+
+<head>
+    <base href="http://localhost/">
+</head>
+
 </html>

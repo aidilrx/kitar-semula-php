@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+input[type="radio"]:checked + label::before {
+  content: "gg";
+}
 
 $theme: #2ef429;
 
@@ -11,15 +15,20 @@ $theme: #2ef429;
 
 body {
   background-color: #91df90;
-  background-image: linear-gradient(to bottom right, snow 70%, $theme 30%);
+  // background-image: linear-gradient(to bottom right, snow 70%, $theme 30%);
+  background-image: url("../img/bg-landing.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0px;
+  margin: 0px auto;
+  max-width: 1500px;
 }
 img {
   max-width: 100%;
   max-height: 100%;
+}
+main {
+  background-color: #ffffffee;
 }
 nav.header {
   background-color: $theme;
@@ -75,7 +84,6 @@ nav.header {
         border: 2px solid $theme;
         background-color: #0bdb07;
         margin: 2px;
-      
       }
 
       .navbar-toggler:active,
@@ -106,10 +114,11 @@ nav.header {
               text-overflow: ellipsis;
               width: 100%;
               color: #212121;
-              font-family: 'Open Sans', sans-serif;
+              font-family: "Open Sans", sans-serif;
             }
 
-            .nav-link:hover, .nav-link.active {
+            .nav-link:hover,
+            .nav-link.active {
               background-color: $theme;
               color: #555;
               // border: 2px solid transparent;
@@ -126,10 +135,23 @@ nav.header {
 
           .nav-item {
             border-radius: inherit;
-            
             .nav-link {
               border-radius: inherit;
             }
+          }
+          .nav-item:not(:nth-child(1)):not(:nth-last-child(1)) {
+            border-radius: 0px;
+          }
+          .nav-item:first-child:nth-last-child(1) {
+            border-radius: inherit;
+          }
+          .nav-item:first-child:not(:last-child) {
+            border-radius: inherit !important;
+            border-top-right-radius: 0px !important;
+          }
+          .nav-item:last-child:not(:first-child) {
+            border-radius: inherit !important;
+            border-top-left-radius: 0px !important;
           }
         }
       }
@@ -137,9 +159,208 @@ nav.header {
   }
 }
 
-.heading-quote {
-  background-image: url('../img//logo.png');
-  background-size: cover;
+.heading-quote-container {
+  position: relative;
+  max-height: 100vh;
+  height: 100vh;
+
+  .bg-image {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    img {
+      width: 100%;
+      height: 100%;
+      margin: 0px auto;
+    }
+  }
+  .heading-quote {
+    position: absolute;
+    left: 0px;
+    top: 5%;
+    width: 100%;
+    .quote {
+      background-color: #0000000f;
+      padding: 20px 20spx;
+      h1 {
+        margin: 20px 0px;
+        font-size: 1.8em;
+      }
+      h4 {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.goal {
+  width: 100%;
+  padding: 0px 15px;
+  margin: 5px auto;
+  min-height: 250px;
+  // height: 250px;
+  background-color: snow;
+  display: flex;
+
+  .goal-image {
+    flex: 3;
+    min-height: inherit;
+    height: inherit;
+    height: 100%;
+    width: 100%;
+    // border: 1px solid black;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .goal-content {
+    flex: 9;
+    padding: 0px 15px;
+
+    .goal-title {
+      padding: 10px 0px;
+      width: auto;
+      max-width: 100%;
+    }
+    .goal-description {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.recyclable-items {
+  // text-align: center;
+  background-color: #fff;
+  padding: 0px;
+
+  h2 {
+    text-align: center;
+    margin: 10px 0px;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 4px solid #eee;
+  }
+
+  .items {
+    // padding: 0px 0px;
+    // display: inline-block;
+    padding: 0px 50px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+
+    .item {
+      min-height: 350px;
+      height: 350px;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // margin: 10px auto 0px auto;
+      // padding: 10px;
+      width: 49.4%;
+      display: inline-block;
+      // border: 1px solid #aaa;
+
+      // border: 2px solid #111;
+      // padding: 10px;
+
+      .item-image {
+        height: 70%;
+        // height: 100px;
+        // border: 1px solid blue;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: inherit;
+      }
+      .item-description {
+        // color: inherit;
+        height: 30%;
+        // border: 1px solid red;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
+        padding: 0px 10px;
+        text-align: center;
+        font-weight: bold;
+        h3 {
+          margin: 0px;
+          // font-size: 1.5em;
+          font-size: 2em;
+          font-weight: inherit;
+        }
+        small {
+          line-height: 0.1px;
+          font-weight: inherit;
+        }
+      }
+    }
+  }
+}
+$item_colors: (
+  "r": #f80001,
+  "b": #0099cd,
+  "y": #ffc704,
+  "g": #029966,
+);
+
+@each $i, $j in $item_colors {
+  .text-#{$i} {
+    color: $j;
+  }
+  .border-#{$i} {
+    border: 1px solid $j;
+  }
+}
+
+.hubungi {
+  width: 100%;
+  padding: 10px 15px;
+  border-top: 5px solid #eeeeeeaa;
+
+  background-color: #fff;
+  h5 {
+    text-align: center;
+  }
+
+  .hubungi-list {
+    width: 100%;
+    display: inline-block;
+    padding-left: 1%;
+    .hubungi-item {
+      width: calc(98% / 3);
+      margin: 5px auto;
+      display: inline-block;
+      text-align: center;
+      border: 1px solid #eee;
+
+      padding: 10px 5px;
+      min-height: 150px;
+      // display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.footer {
+  width: 100%;
+  padding: 10px;
+  border-top: 5px solid $theme;
+  background-color: #fff;
+  h6 {
+    a {
+      color: $theme;
+    }
+    .separator {
+      color: #888;
+    }
+  }
 }
 
 .hidden {
